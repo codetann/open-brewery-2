@@ -9,7 +9,8 @@ function SearchBar() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setNavToggle(false);
-    setSearch(inputRef.current.value);
+    if ((inputRef.current.value = "")) return;
+    setSearch(inputRef.current.value.split(" ").join("_"));
   };
 
   return (
