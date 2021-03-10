@@ -10,6 +10,11 @@ export default function Brewery({ data }) {
         <p>
           {data.city}, {data.state}
         </p>
+        <Icons>
+          {data.phone && <i className="fas fa-phone"></i>}
+          {data.longitude && <i className="fas fa-map-marker-alt"></i>}
+          {data.website_url && <i className="fas fa-globe"></i>}
+        </Icons>
       </Location>
     </Container>
   );
@@ -22,14 +27,26 @@ const Container = styled.div`
   margin: 3rem 0;
   color: white;
   padding: 1rem;
-
-  p {
-    color: #a3a3a3;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  border-radius: 0.5rem;
 `;
 
 const Location = styled.div`
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
+  line-height: 1.5rem;
+
+  color: #a3a3a3;
+`;
+
+const Icons = styled.div`
+  i {
+    font-size: 24px;
+    margin-top: 2rem;
+    margin-right: 1rem;
+  }
 `;

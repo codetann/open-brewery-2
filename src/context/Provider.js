@@ -19,13 +19,14 @@ export default function Provider({ children }) {
     axios
       .get(`https://api.openbrewerydb.org/breweries?by_city=${search}`)
       .then((res) => {
-        if (res.data === []) {
+        if (res.data.length === 0) {
           setError("No Results");
+          setData([]);
         } else {
           setError("");
           setData(res.data);
         }
-        console.log(error, data);
+        console.log(res.data.length);
       })
       .catch(setError("No Results"));
   }, [search]);
