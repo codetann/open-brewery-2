@@ -16,11 +16,16 @@ export default function Provider({ children }) {
   const [navToggle, setNavToggle] = useToggle(false);
 
   useEffect(() => {
-    if (search === "") return;
     axios
       .get(`https://api.openbrewerydb.org/breweries?by_city=${search}`)
       .then((res) => {
-        setData(res.data);
+        if (res.data === []) {
+          setError("No Results");
+        } else {
+          setError("");
+          setData(res.data);
+        }
+        console.log(error, data);
       })
       .catch(setError("No Results"));
   }, [search]);
