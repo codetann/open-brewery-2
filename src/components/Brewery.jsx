@@ -48,5 +48,11 @@ const Icons = styled.div`
     font-size: 24px;
     margin-top: 2rem;
     margin-right: 1rem;
+    transition: 0.3s;
+  }
+
+  i:hover {
+    color: #e92153;
+    cursor: pointer;
   }
 `;
