@@ -26,7 +26,6 @@ export default function Provider({ children }) {
           setError("");
           setData(res.data);
         }
-        console.log(res.data.length);
       })
       .catch(setError("No Results"));
   }, [search]);
