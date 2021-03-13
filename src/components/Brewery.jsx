@@ -11,9 +11,24 @@ export default function Brewery({ data }) {
           {data.city}, {data.state}
         </p>
         <Icons>
-          {data.phone && <i className="fas fa-phone"></i>}
-          {data.longitude && <i className="fas fa-map-marker-alt"></i>}
-          {data.website_url && <i className="fas fa-globe"></i>}
+          {data.phone && (
+            <a href={`tel:${data.phone}`}>
+              <i className="fas fa-phone"></i>
+            </a>
+          )}
+          {data.longitude && (
+            <a
+              href={`https://www.google.com/maps/dir/?api=1&destination=${data.latitude},${data.longitude}`}
+              target="_blank"
+            >
+              <i className="fas fa-map-marker-alt"></i>
+            </a>
+          )}
+          {data.website_url && (
+            <a href={data.website_url} target="_blank">
+              <i className="fas fa-globe"></i>
+            </a>
+          )}
         </Icons>
       </Location>
     </Container>
@@ -49,6 +64,10 @@ const Icons = styled.div`
     margin-top: 2rem;
     margin-right: 1rem;
     transition: 0.3s;
+  }
+
+  a {
+    color: #a3a3a3;
   }
 
   i:hover {
