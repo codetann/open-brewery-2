@@ -60,9 +60,9 @@ const Location = styled.div`
 
 const Icons = styled.div`
   i {
-    font-size: 24px;
+    font-size: 22px;
     margin-top: 2rem;
-    margin-right: 1rem;
+    margin-right: 2rem;
     transition: 0.3s;
   }
 

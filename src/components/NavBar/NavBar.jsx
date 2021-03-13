@@ -8,8 +8,6 @@ import MobileMenu from "./MobileMenu";
 
 const LINKS = ["Home", "About"];
 
-console.log;
-
 export default function NavBar() {
   // - Hooks
   const { navToggle, setNavToggle } = useAppContext();
